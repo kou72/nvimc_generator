@@ -46,22 +46,7 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/firebase',
-    {
-      config: {
-        apiKey: process.env.FIREBASE_API_KEY,
-        authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-        databaseURL: process.env.FIREBASE_DATABASE_URL,
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-        appId: process.env.FIREBASE_APP_ID,
-        measurementId: process.env.FIREBASE_MEASUREMENT_ID
-      },
-      services: {
-        analytics: true
-      }
-    }
+    '@nuxtjs/firebase'
   ],
   /*
    ** vuetify module configuration
@@ -82,6 +67,30 @@ export default {
           success: colors.green.accent3
         }
       }
+    }
+  },
+
+  firebase: {
+    config: {
+      // apiKey: process.env.FIREBASE_API_KEY,
+      // authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      // databaseURL: process.env.FIREBASE_DATABASE_URL,
+      // projectId: process.env.FIREBASE_PROJECT_ID,
+      // storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      // messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+      // appId: process.env.FIREBASE_APP_ID,
+      // measurementId: process.env.FIREBASE_MEASUREMENT_ID
+      apiKey: 'AIzaSyBD0p4ccYjXjO7sgOBs8lO9sqNGkFEgn2w',
+      authDomain: 'nvimc-generator.firebaseapp.com',
+      databaseURL: 'https://nvimc-generator.firebaseio.com',
+      projectId: 'nvimc-generator',
+      storageBucket: 'nvimc-generator.appspot.com',
+      messagingSenderId: '569106731289',
+      appId: '1:569106731289:web:af839511c8b2673232f588',
+      measurementId: 'G-DRNY2FGFGJ'
+    },
+    services: {
+      analytics: true
     }
   },
   /*
