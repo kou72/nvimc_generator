@@ -46,11 +46,7 @@ export default {
   methods: {
     downloadText() {
       const name = this.$store.state.checklist.selection.map((v) => v.name)
-      const blob = new Blob([name], { type: 'text/plain' })
-      const link = document.createElement('a')
-      link.href = window.URL.createObjectURL(blob)
-      link.download = 'init.vim.txt'
-      link.click()
+      this.$download(name)
     }
   }
 }

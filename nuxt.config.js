@@ -31,7 +31,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/trianglify.js'],
+  plugins: ['~/plugins/trianglify.js', '~/plugins/download.js'],
 
   /*
    ** Nuxt.js dev-modules
