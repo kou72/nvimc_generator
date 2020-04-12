@@ -16,8 +16,10 @@
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
-        <v-btn class="mb-4" @click="updateText">アップデートテキスト</v-btn>
         <v-card class="pa-md-4" min-height="50px">{{ text }}</v-card>
+        <v-card class="pa-md-4" min-height="50px">
+          <div v-if="this.$store.state.checklist.selectionId.includes(2)" class="m-0">OK</div>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -47,13 +49,15 @@ export default {
       this.$download(this.text)
     },
     updateText() {
-      this.text = this.text + '\nAdd Text'
+      if (this.$store.state.checklist.selectionId.includes(2)) {
+        this.text = this.text + '\nAdd Text'
+      }
     }
   }
 }
 </script>
-<style>
-.v-card {
-  white-space: pre-line;
-}
-</style>
+<!-- <style> -->
+<!-- .v-card { -->
+<!--   white-space: pre-line; -->
+<!-- } -->
+<!-- </style> -->
