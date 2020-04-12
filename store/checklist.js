@@ -19,11 +19,7 @@ export const state = () => ({
   ],
   selection: ['bbbb']
 })
-export const getters = {
-  list(state) {
-    return state.items
-  }
-}
+
 export const mutations = {
   updateSelection(state, value) {
     state.selection = value
