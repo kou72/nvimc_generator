@@ -19,6 +19,9 @@
         <v-card class="pa-md-4" min-height="50px">{{ text }}</v-card>
         <v-card class="pa-md-4" min-height="50px">
           <div v-if="this.$store.state.checklist.selectionId.includes(2)" class="m-0">OK</div>
+          <no-ssr>
+            <vue-typer :repeat="false" :type-delay="20" text="ここに表示させたいテキストを記述しよう！"></vue-typer>
+          </no-ssr>
         </v-card>
       </v-col>
     </v-row>
@@ -27,6 +30,7 @@
 
 <script>
 import Passing from '~/components/Passing'
+
 export default {
   components: {
     Passing
