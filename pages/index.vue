@@ -2,7 +2,11 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1>NeoVim Config Generator</h1>
+        <!-- {{ counter }} -->
+        {{ list }}
+        <!-- {{ list }} -->
+        <!-- {{ $store.state.list }} -->
+        <Passing text="NeoVim Config Generator"></Passing>
         <v-divider class="mt-8"></v-divider>
       </v-col>
       <v-col cols="6">
@@ -28,7 +32,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+// import { mapState } from 'vuex'
+import Passing from '~/components/Passing'
 export default {
+  components: {
+    Passing
+  },
   data: () => ({
     selection: [],
     items: [
@@ -50,6 +60,10 @@ export default {
       }
     ]
   }),
+  computed: {
+    ...mapGetters('checklist', ['list'])
+    // ...mapState('checklist', ['counter', 'list'])
+  },
   methods: {
     downloadText() {
       const name = this.selection.map((v) => v.name)
