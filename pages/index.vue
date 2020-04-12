@@ -10,12 +10,13 @@
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
+        <v-btn class="mb-4" @click="updateText">アップデートテキスト</v-btn>
         <v-card class="pa-md-4" min-height="50px">
           <div v-for="node in this.$store.state.checklist.selection" :key="node.id">
             {{ node.name }}
           </div>
-          {{ this.$store.state.checklist.selectionId }}
         </v-card>
+        <v-card class="pa-md-4" min-height="50px">{{ text }}</v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -27,6 +28,9 @@ export default {
   components: {
     Passing
   },
+  data: () => ({
+    text: 'Test Text\nSample Text'
+  }),
   computed: {
     selection: {
       get() {
@@ -39,9 +43,16 @@ export default {
   },
   methods: {
     downloadText() {
-      const name = this.$store.state.checklist.selection.map((v) => v.name)
-      this.$download(name)
+      this.$download(this.text)
+    },
+    updateText() {
+      this.text = this.text + '\nAdd Text'
     }
   }
 }
 </script>
+<style>
+.v-card {
+  white-space: pre-line;
+}
+</style>
