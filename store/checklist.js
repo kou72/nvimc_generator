@@ -17,11 +17,13 @@ export const state = () => ({
       ]
     }
   ],
-  selection: ['bbbb']
+  selection: [],
+  selectionId: []
 })
 
 export const mutations = {
   updateSelection(state, value) {
     state.selection = value
+    state.selectionId = value.map((v) => v.id)
   }
 }

@@ -12,13 +12,15 @@
           :selection-type="selectionType"
           selectable
           return-object
-          open-all
         ></v-treeview>
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
         <v-card class="pa-md-4" min-height="50px">
-          {{ this.$store.state.checklist.selection }}
+          <div v-for="node in this.$store.state.checklist.selection" :key="node.id">
+            {{ node.name }}
+          </div>
+          {{ this.$store.state.checklist.selectionId }}
         </v-card>
       </v-col>
     </v-row>
