@@ -17,10 +17,8 @@
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
-        <v-card class="pa-md-4" outlined min-height="50px">
-          <div v-for="node in selection" :key="node.id">
-            {{ node.name }}
-          </div>
+        <v-card class="pa-md-4" min-height="50px">
+          {{ this.$store.state.checklist.selection }}
         </v-card>
       </v-col>
     </v-row>
@@ -28,21 +26,24 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
 import Passing from '~/components/Passing'
 export default {
   components: {
     Passing
   },
-  data: () => ({
-    selection: []
-  }),
-  // computed: {
-  //   ...mapGetters('checklist', ['items'])
-  // },
+  computed: {
+    selection: {
+      get() {
+        return this.$store.state.checklist.selection
+      },
+      set(value) {
+        this.$store.commit('checklist/updateSelection', value)
+      }
+    }
+  },
   methods: {
     downloadText() {
-      const name = this.selection.map((v) => v.name)
+      const name = this.$store.state.checklist.selection.map((v) => v.name)
       const blob = new Blob([name], { type: 'text/plain' })
       const link = document.createElement('a')
       link.href = window.URL.createObjectURL(blob)
