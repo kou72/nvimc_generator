@@ -6,13 +6,7 @@
         <v-divider class="mt-8"></v-divider>
       </v-col>
       <v-col cols="6">
-        <v-treeview
-          v-model="selection"
-          :items="this.$store.state.checklist.items"
-          :selection-type="selectionType"
-          selectable
-          return-object
-        ></v-treeview>
+        <v-treeview v-model="selection" :items="this.$store.state.checklist.items" selectable return-object></v-treeview>
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
