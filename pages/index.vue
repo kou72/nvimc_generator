@@ -2,17 +2,13 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <!-- {{ counter }} -->
-        {{ list }}
-        <!-- {{ list }} -->
-        <!-- {{ $store.state.list }} -->
         <Passing text="NeoVim Config Generator"></Passing>
         <v-divider class="mt-8"></v-divider>
       </v-col>
       <v-col cols="6">
         <v-treeview
           v-model="selection"
-          :items="items"
+          :items="this.$store.state.checklist.items"
           :selection-type="selectionType"
           selectable
           return-object
@@ -32,38 +28,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-// import { mapState } from 'vuex'
+// import { mapGetters } from 'vuex'
 import Passing from '~/components/Passing'
 export default {
   components: {
     Passing
   },
   data: () => ({
-    selection: [],
-    items: [
-      {
-        id: 1,
-        name: 'Root',
-        children: [
-          { id: 2, name: 'Child #1' },
-          { id: 3, name: 'Child #2' },
-          {
-            id: 4,
-            name: 'Child #3',
-            children: [
-              { id: 5, name: 'Grandchild #1' },
-              { id: 6, name: 'Grandchild #2' }
-            ]
-          }
-        ]
-      }
-    ]
+    selection: []
   }),
-  computed: {
-    ...mapGetters('checklist', ['list'])
-    // ...mapState('checklist', ['counter', 'list'])
-  },
+  // computed: {
+  //   ...mapGetters('checklist', ['items'])
+  // },
   methods: {
     downloadText() {
       const name = this.selection.map((v) => v.name)
