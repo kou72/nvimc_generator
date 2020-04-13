@@ -2,10 +2,12 @@ import Vue from 'vue'
 
 const customText = (id) => {
   let baseText = ''
-  if (id.includes(2)) baseText = baseText + 'test text 1\n'
-  if (id.includes(3)) baseText = baseText + 'test text 2\n'
-  if (id.includes(5)) baseText = baseText + 'test text 3\n'
-  if (id.includes(6)) baseText = baseText + 'test text 4\n'
+  if (id.includes('clipboard')) baseText = baseText + 'test text 1\n'
+  if (id.includes('mouse')) baseText = baseText + 'test text 2\n'
+  if (id.includes('tabstop')) baseText = baseText + 'test text 3\n'
+  if (id.includes('shiftwidth')) baseText = baseText + 'test text 4\n'
+  if (id.includes('expandtab')) baseText = baseText + 'test text 4\n'
+  if (id.includes('ignorecase')) baseText = baseText + 'test text 4\n'
   return baseText
 }
 

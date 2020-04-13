@@ -1,19 +1,15 @@
 export const state = () => ({
   items: [
     {
-      id: 1,
-      name: 'Root',
+      id: 'base',
+      name: '基本設定',
       children: [
-        { id: 2, name: 'Child #1' },
-        { id: 3, name: 'Child #2' },
-        {
-          id: 4,
-          name: 'Child #3',
-          children: [
-            { id: 5, name: 'Grandchild #1' },
-            { id: 6, name: 'Grandchild #2' }
-          ]
-        }
+        { id: 'clipboard', name: 'クリップボード有効化' },
+        { id: 'mouse', name: 'マウス有効化' },
+        { id: 'tabstop', name: 'tabキーの幅を2文字分に設定' },
+        { id: 'shiftwidth', name: 'インデント幅を2文字分に設定' },
+        { id: 'expandtab', name: 'tabキーでスペースが挿入される' },
+        { id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }
       ]
     }
   ],

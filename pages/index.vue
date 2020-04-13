@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     downloadText() {
-      // this.$download(this.text)
       this.$download(this.$store.state.checklist.selectionId)
     },
     updateText() {
@@ -58,8 +57,3 @@ export default {
   }
 }
 </script>
-<!-- <style> -->
-<!-- .v-card { -->
-<!--   white-space: pre-line; -->
-<!-- } -->
-<!-- </style> -->
