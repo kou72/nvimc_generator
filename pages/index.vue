@@ -8,6 +8,7 @@
       <v-col cols="6">
         <v-treeview
           v-model="selection"
+          dense
           :items="this.$store.state.checklist.items"
           selectable
           return-object
@@ -46,7 +47,8 @@ export default {
   },
   methods: {
     downloadText() {
-      this.$download(this.text)
+      // this.$download(this.text)
+      this.$download(this.$store.state.checklist.selectionId)
     },
     updateText() {
       if (this.$store.state.checklist.selectionId.includes(2)) {
