@@ -19,6 +19,7 @@
     "prismjs": "^1.20.0",
     "trianglify": "^3.0.0",
     "typescript": "^3.8.3",
+    "vue-prism-component": "^1.2.0",
     "vue-typer": "^1.2.0"
   },
   "devDependencies": {

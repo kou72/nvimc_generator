@@ -35,7 +35,7 @@ export default {
     '~/plugins/trianglify.js',
     '~/plugins/download.js',
     { src: '~/plugins/vueTyper.js', ssr: false },
-    '~/plugins/prism'
+    { src: '@/plugins/prism', ssr: false }
   ],
 
   /*
