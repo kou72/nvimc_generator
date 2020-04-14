@@ -34,7 +34,7 @@ export default {
     baseSelection: []
   }),
   computed: {
-    ...mapState('checklist', ['installItems', 'baseItems', 'installInit', 'baseInit', 'segment', 'selectionId'])
+    ...mapState('checklist', ['installItems', 'baseItems', 'installInit', 'baseInit'])
   },
   mounted() {
     this.installSelection = this.installInit
