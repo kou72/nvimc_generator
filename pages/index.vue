@@ -33,20 +33,20 @@ export default {
     installSelection: [],
     baseSelection: []
   }),
+  computed: {
+    ...mapState('checklist', ['installItems', 'baseItems', 'installInit', 'baseInit', 'segment', 'selectionId'])
+  },
   mounted() {
     this.installSelection = this.installInit
     this.baseSelection = this.baseInit
-  },
-  computed: {
-    ...mapState('checklist', ['installItems', 'baseItems', 'installInit', 'baseInit', 'segment', 'selectionId'])
   },
   methods: {
     downloadConfig() {
       this.$download(this.config)
     },
     updateConfig(e) {
-      const mapSelection = [...this.installSelection, ...this.baseSelection]
-      this.$store.commit('checklist/updateSelection', mapSelection)
+      const concatSelection = [...this.installSelection, ...this.baseSelection]
+      this.$store.commit('checklist/updateSelection', concatSelection)
       this.config = this.$customText(this.segment, this.selectionId)
     }
   }

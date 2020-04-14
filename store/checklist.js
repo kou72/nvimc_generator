@@ -50,8 +50,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  updateSelection(state, mapSelection) {
-    state.segment = mapSelection.map((v) => v.seg)
-    state.selectionId = mapSelection.map((v) => v.id)
+  updateSelection(state, concatSelection) {
+    state.segment = concatSelection.map((v) => v.seg)
+    state.selectionId = concatSelection.map((v) => v.id)
   }
 }
