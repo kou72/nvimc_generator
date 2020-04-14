@@ -8,7 +8,14 @@
       </v-col>
       <v-col cols="6">
         <!-- チェックボックス -->
-        <v-treeview v-model="bindSelection" :items="items" dense selectable return-object @input="updateConfig"></v-treeview>
+        <v-treeview
+          v-model="bindSelection"
+          :items="baseItems"
+          dense
+          selectable
+          return-object
+          @input="updateConfig"
+        ></v-treeview>
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
@@ -31,7 +38,7 @@ export default {
     config: null
   }),
   computed: {
-    ...mapState('checklist', ['items', 'selection', 'selectionId']),
+    ...mapState('checklist', ['baseItems', 'selection', 'baseSelectionId']),
     // storeのselectionへと双方向バインド
     bindSelection: {
       get() {
@@ -47,7 +54,7 @@ export default {
       this.$download(this.config)
     },
     updateConfig() {
-      this.config = this.$customText(this.selectionId)
+      this.config = this.$customText(this.baseSelectionId)
     }
   }
 }

@@ -1,5 +1,5 @@
 export const state = () => ({
-  items: [
+  baseItems: [
     {
       id: 'base',
       name: '基本設定',
@@ -14,12 +14,12 @@ export const state = () => ({
     }
   ],
   selection: [],
-  selectionId: []
+  baseSelectionId: []
 })
 
 export const mutations = {
   updateSelection(state, value) {
     state.selection = value
-    state.selectionId = value.map((v) => v.id)
+    state.baseSelectionId = value.map((v) => v.id)
   }
 }
