@@ -22,19 +22,23 @@
 
 <script>
 import { mapState } from 'vuex'
-import Passing from '~/components/Passing'
+import Passing from '~/components/Passing' // 隠しボックスのアニメーション
 
 export default {
   components: {
-    Passing // 隠しボックスのアニメーション
+    Passing
   },
   data: () => ({
     config: null,
     installSelection: [],
-    baseSelection: [{ seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }]
+    baseSelection: []
   }),
+  mounted() {
+    this.installSelection = this.installInit
+    this.baseSelection = this.baseInit
+  },
   computed: {
-    ...mapState('checklist', ['installItems', 'baseItems', 'segment', 'selectionId'])
+    ...mapState('checklist', ['installItems', 'baseItems', 'installInit', 'baseInit', 'segment', 'selectionId'])
   },
   methods: {
     downloadConfig() {
