@@ -17,7 +17,7 @@
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
-        <prism language="js">{{ vimc }}</prism>
+        <prism language="js">{{ text }}</prism>
       </v-col>
     </v-row>
   </v-container>
@@ -31,8 +31,7 @@ export default {
     Passing
   },
   data: () => ({
-    text: 'Test Text\nSample Text',
-    vimc: null
+    text: null
   }),
   computed: {
     selection: {
@@ -46,10 +45,10 @@ export default {
   },
   methods: {
     downloadText() {
-      this.$download(this.vimc)
+      this.$download(this.text)
     },
     updateText() {
-      this.vimc = this.$customText(this.$store.state.checklist.selectionId)
+      this.text = this.$customText(this.$store.state.checklist.selectionId)
     }
   }
 }
