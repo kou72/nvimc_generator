@@ -31,7 +31,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/trianglify.js', '~/plugins/download.js', { src: '~/plugins/vueTyper.js', ssr: false }],
+  plugins: [
+    '~/plugins/trianglify.js',
+    '~/plugins/download.js',
+    { src: '~/plugins/vueTyper.js', ssr: false },
+    '~/plugins/prism'
+  ],
 
   /*
    ** Nuxt.js dev-modules
