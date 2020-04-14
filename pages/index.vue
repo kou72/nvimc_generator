@@ -8,14 +8,8 @@
       </v-col>
       <v-col cols="6">
         <!-- チェックボックス -->
-        <v-treeview
-          v-model="bindSelection"
-          :items="baseItems"
-          dense
-          selectable
-          return-object
-          @input="updateConfig"
-        ></v-treeview>
+        <v-treeview v-model="installSelection" :items="installItems" dense selectable return-object @input="updateConfig"></v-treeview>
+        <v-treeview v-model="baseSelection" :items="baseItems" dense selectable return-object @input="updateConfig"></v-treeview>
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
@@ -35,26 +29,21 @@ export default {
     Passing // 隠しボックスのアニメーション
   },
   data: () => ({
-    config: null
+    config: null,
+    installSelection: [],
+    baseSelection: [{ seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }]
   }),
   computed: {
-    ...mapState('checklist', ['baseItems', 'selection', 'baseSelectionId']),
-    // storeのselectionへと双方向バインド
-    bindSelection: {
-      get() {
-        return this.selection
-      },
-      set(value) {
-        this.$store.commit('checklist/updateSelection', value)
-      }
-    }
+    ...mapState('checklist', ['installItems', 'baseItems', 'segment', 'selectionId'])
   },
   methods: {
     downloadConfig() {
       this.$download(this.config)
     },
-    updateConfig() {
-      this.config = this.$customText(this.baseSelectionId)
+    updateConfig(e) {
+      const mapSelection = [...this.installSelection, ...this.baseSelection]
+      this.$store.commit('checklist/updateSelection', mapSelection)
+      this.config = this.$customText(this.segment, this.selectionId)
     }
   }
 }
