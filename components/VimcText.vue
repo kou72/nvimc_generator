@@ -1,25 +1,8 @@
 <template>
-  <!-- <v-card class="pa-md-4" outlined dark min-height="50px"> -->
-  <!--   <div v-if="selectionId.length"> -->
-  <!--     <div>"*****************************************************</div> -->
-  <!--     <div>" Base Setting</div> -->
-  <!--     <div>"*****************************************************</div> -->
-  <!--   </div> -->
-  <!--   <div v-if="selectionId.includes('clipboard')">set clipboard+=unnamedplus</div> -->
-  <!--   <div v-if="selectionId.includes('mouse')">set mouse=a</div> -->
-  <!--   <div v-if="selectionId.includes('tabstop')">set tabstop=2</div> -->
-  <!--   <div v-if="selectionId.includes('shiftwidth')">set shiftwidth=2</div> -->
-  <!--   <div v-if="selectionId.includes('expandtab')">set expandtab</div> -->
-  <!--   <div v-if="selectionId.includes('ignorecase')">set ignorecase</div> -->
-  <!-- </v-card> -->
-  <div>
-    <pre><code class="language-vim">
-"*****************************************************************************
-" Install vim-pulg
-"*****************************************************************************
-  </code></pre>
-
-    <pre><code class="language-js">
+  <pre><code class="language-js">
+"//*********************************************************************
+"// Install vim-pulg
+"//*********************************************************************
 if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
   echo 'install vim-plug...'
   call system('curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
@@ -55,7 +38,6 @@ set shiftwidth=2
 set expandtab
 set ignorecase
   </code></pre>
-  </div>
 </template>
 <script>
 import Prism from '~/plugins/prism'
@@ -74,5 +56,9 @@ export default {
 .v-card {
   font-family: Courier;
   line-height: 100%;
+}
+
+code[class*='language-'] {
+  box-shadow: none;
 }
 </style>
