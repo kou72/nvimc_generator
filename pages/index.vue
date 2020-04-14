@@ -46,8 +46,9 @@ export default {
     },
     updateConfig(e) {
       const concatSelection = [...this.installSelection, ...this.baseSelection]
-      this.$store.commit('checklist/updateSelection', concatSelection)
-      this.config = this.$customText(this.segment, this.selectionId)
+      const segment = concatSelection.map((v) => v.seg)
+      const id = concatSelection.map((v) => v.id)
+      this.config = this.$customText(segment, id)
     }
   }
 }

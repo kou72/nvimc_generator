@@ -43,15 +43,5 @@ export const state = () => ({
         { seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }
       ]
     }
-  ],
-
-  segment: [], // segment 選択された大項目
-  selectionId: [] // id 選択された小項目
+  ]
 })
-
-export const mutations = {
-  updateSelection(state, concatSelection) {
-    state.segment = concatSelection.map((v) => v.seg)
-    state.selectionId = concatSelection.map((v) => v.id)
-  }
-}
