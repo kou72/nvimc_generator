@@ -53,12 +53,8 @@ export default {
 }
 </script>
 <style>
-.v-card {
-  font-family: Courier;
-  line-height: 100%;
-}
-
 code[class*='language-'] {
   box-shadow: none;
+  font-size: x-small;
 }
 </style>
