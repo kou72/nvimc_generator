@@ -17,7 +17,7 @@
       </v-col>
       <v-col cols="6">
         <v-btn class="mb-4" @click="downloadText">ダウンロード</v-btn>
-        <VimcText />
+        <prism language="js">{{ vimc }}</prism>
       </v-col>
     </v-row>
   </v-container>
@@ -25,15 +25,14 @@
 
 <script>
 import Passing from '~/components/Passing'
-import VimcText from '~/components/VimcText'
 
 export default {
   components: {
-    Passing,
-    VimcText
+    Passing
   },
   data: () => ({
-    text: 'Test Text\nSample Text'
+    text: 'Test Text\nSample Text',
+    vimc: null
   }),
   computed: {
     selection: {
@@ -47,13 +46,20 @@ export default {
   },
   methods: {
     downloadText() {
-      this.$download(this.$store.state.checklist.selectionId)
+      this.$download(this.vimc)
     },
     updateText() {
-      if (this.$store.state.checklist.selectionId.includes(2)) {
-        this.text = this.text + '\nAdd Text'
-      }
+      this.vimc = this.$customText(this.$store.state.checklist.selectionId)
     }
   }
 }
 </script>
+<style>
+code[class*='language-'] {
+  box-shadow: none;
+  font-size: small;
+}
+.v-application code:before {
+  content: none;
+}
+</style>
