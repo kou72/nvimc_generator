@@ -3,7 +3,7 @@ import Vue from 'vue'
 Vue.prototype.$customText = (id) => {
   let baseText = ''
   if (id.length)
-    baseText += `"//*****************************************************
+    baseText += `\n"//*****************************************************
 "// Base Setting
 "//*****************************************************\n`
   if (id.includes('clipboard')) baseText += 'set clipboard+=unnamedplus\n'
