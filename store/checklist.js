@@ -24,7 +24,7 @@ export const state = () => ({
   plugItems: [
     {
       id: 'plug',
-      name: '機能の拡張',
+      name: '機能拡張',
       children: [
         { seg: 'plug', id: 'dirtree', name: 'ディレクトリツリー機能' },
         { seg: 'plug', id: 'comment', name: 'コメントアウト機能' },
@@ -35,7 +35,7 @@ export const state = () => ({
   visualItems: [
     {
       id: 'visual',
-      name: '外観の装飾',
+      name: '外観装飾',
       children: [
         { seg: 'visual', id: 'syntax', name: 'シンタックスハイライト' },
         { seg: 'visual', id: 'ruler', name: 'カーソルの位置表示' },
