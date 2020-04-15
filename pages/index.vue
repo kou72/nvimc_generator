@@ -51,7 +51,7 @@ export default {
       const concatSelection = [...this.installSelection, ...this.baseSelection, ...this.plugSelection]
       const segment = concatSelection.map((v) => v.seg)
       const id = concatSelection.map((v) => v.id)
-      this.config = this.$customText(segment, id)
+      this.config = this.$customText(segment.flat(), id)
     }
   }
 }
