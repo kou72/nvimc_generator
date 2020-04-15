@@ -15,8 +15,10 @@
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
-        <v-btn class="mb-4" @click="downloadConfig">ダウンロード</v-btn>
         <prism language="js">{{ config }}</prism>
+      </v-col>
+      <v-col cols="12">
+        <v-btn class="mb-4" @click="downloadConfig">ダウンロード</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -64,7 +66,7 @@ export default {
 /* configテキストの調整 */
 code[class*='language-'] {
   box-shadow: none;
-  font-size: small;
+  font-size: x-small;
 }
 .v-application code:before {
   content: none;
