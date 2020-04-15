@@ -16,11 +16,13 @@ endif\n`
   if (seg.includes('plug'))
     baseText += `\n"//*****************************************************
 "// Plug Install Packages
-"//*****************************************************\n`
+"//*****************************************************
+call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('dirtree')) baseText += "Plug 'preservim/nerdtree'\n"
   if (id.includes('comment')) baseText += "Plug 'sheerun/vim-polyglot'\n"
   if (id.includes('comment')) baseText += "Plug 'tpope/vim-commentary'\n"
   if (id.includes('git')) baseText += "Plug 'tpope/vim-fugitive'\n"
+  if (seg.includes('plug')) baseText += 'call plug#end()\n'
 
   // 基本設定
   if (seg.includes('base'))
