@@ -21,6 +21,17 @@ export const state = () => ({
       ]
     }
   ],
+  plugItems: [
+    {
+      id: 'plug',
+      name: '機能の拡張',
+      children: [
+        { seg: 'plug', id: 'dirtree', name: 'ディレクトリツリー機能' },
+        { seg: 'plug', id: 'comment', name: 'コメントアウト機能' },
+        { seg: 'plug', id: 'git', name: 'git操作機能' }
+      ]
+    }
+  ],
 
   // Init 最初に選択されている項目
   installInit: [
@@ -41,6 +52,17 @@ export const state = () => ({
         { seg: 'base', id: 'shiftwidth', name: 'インデント幅を2文字分に設定' },
         { seg: 'base', id: 'expandtab', name: 'tabキーでスペースを挿入' },
         { seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }
+      ]
+    }
+  ],
+  plugInit: [
+    {
+      id: 'plug',
+      name: '機能の拡張',
+      children: [
+        { seg: 'plug', id: 'nerdtree', name: 'ディレクトリツリー機能' },
+        { seg: 'plug', id: 'commentary', name: 'コメントアウト機能' },
+        { seg: 'plug', id: 'fugitive', name: 'git操作機能' }
       ]
     }
   ]

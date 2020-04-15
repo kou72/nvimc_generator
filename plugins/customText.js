@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 Vue.prototype.$customText = (seg, id) => {
   let baseText = ''
-  // install セグメント
+  // Plug自動インストール
   if (seg.includes('install'))
     baseText += `\n"//*****************************************************
 "// Install vim-pulg
@@ -12,7 +12,17 @@ if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
   call system('curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 endif\n`
 
-  // base セグメント
+  // 機能の拡張
+  if (seg.includes('plug'))
+    baseText += `\n"//*****************************************************
+"// Plug Install Packages
+"//*****************************************************\n`
+  if (id.includes('dirtree')) baseText += "Plug 'preservim/nerdtree'\n"
+  if (id.includes('comment')) baseText += "Plug 'sheerun/vim-polyglot'\n"
+  if (id.includes('comment')) baseText += "Plug 'tpope/vim-commentary'\n"
+  if (id.includes('git')) baseText += "Plug 'tpope/vim-fugitive'\n"
+
+  // 基本設定
   if (seg.includes('base'))
     baseText += `\n"//*****************************************************
 "// Base Setting
