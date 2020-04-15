@@ -8,10 +8,7 @@
       </v-col>
       <v-col cols="6">
         <!-- チェックボックス -->
-        <v-treeview v-model="installSelection" :items="installItems" dense selectable return-object @input="updateConfig"></v-treeview>
-        <v-treeview v-model="baseSelection" :items="baseItems" dense selectable return-object @input="updateConfig"></v-treeview>
-        <v-treeview v-model="plugSelection" :items="plugItems" dense selectable return-object @input="updateConfig"></v-treeview>
-        <v-treeview v-model="visualSelection" :items="visualItems" dense selectable return-object @input="updateConfig"></v-treeview>
+        <v-treeview v-model="selection" :items="Items" dense selectable return-object @input="updateConfig"></v-treeview>
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
@@ -33,29 +30,22 @@ export default {
     Passing
   },
   data: () => ({
-    config: null,
-    installSelection: [],
-    baseSelection: [],
-    plugSelection: [],
-    visualSelection: []
+    selection: [],
+    config: null
   }),
   computed: {
-    ...mapState('checklist', ['installItems', 'baseItems', 'plugItems', 'visualItems', 'installInit', 'baseInit', 'plugInit', 'visualInit'])
+    ...mapState('checklist', ['Items', 'Init'])
   },
   mounted() {
-    this.installSelection = this.installInit
-    this.baseSelection = this.baseInit
-    this.plugSelection = this.plugInit
-    this.visualSelection = this.visualInit
+    this.selection = this.Init
   },
   methods: {
     downloadConfig() {
       this.$download(this.config)
     },
     updateConfig(e) {
-      const concatSelection = [...this.installSelection, ...this.baseSelection, ...this.plugSelection, ...this.visualSelection]
-      const segment = concatSelection.map((v) => v.seg)
-      const id = concatSelection.map((v) => v.id)
+      const segment = this.selection.map((v) => v.seg)
+      const id = this.selection.map((v) => v.id)
       this.config = this.$customText(segment.flat(), id)
     }
   }
