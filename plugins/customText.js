@@ -33,5 +33,6 @@ endif\n`
   if (id.includes('shiftwidth')) baseText += 'set shiftwidth=2\n'
   if (id.includes('expandtab')) baseText += 'set expandtab\n'
   if (id.includes('ignorecase')) baseText += 'set ignorecase\n'
+
   return baseText.trim()
 }
