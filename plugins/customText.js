@@ -12,7 +12,7 @@ if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
   call system('curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 endif\n`
 
-  // 機能の拡張
+  // 機能拡張
   if (seg.includes('plug'))
     baseText += `\n"//*****************************************************
 "// Plug Install Packages
@@ -22,6 +22,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('comment')) baseText += "Plug 'sheerun/vim-polyglot'\n"
   if (id.includes('comment')) baseText += "Plug 'tpope/vim-commentary'\n"
   if (id.includes('git')) baseText += "Plug 'tpope/vim-fugitive'\n"
+  if (id.includes('git')) baseText += "Plug 'airblade/vim-gitgutter'\n"
   if (id.includes('indentLin')) baseText += "Plug 'Yggdroot/indentLine'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline-themes'\n"
@@ -39,7 +40,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('expandtab')) baseText += 'set expandtab\n'
   if (id.includes('ignorecase')) baseText += 'set ignorecase\n'
 
-  // 外観を装飾
+  // 外観装飾
   if (seg.includes('visual'))
     baseText += `\n"//*****************************************************
 "// Visual Settings
