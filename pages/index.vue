@@ -11,6 +11,7 @@
         <v-treeview v-model="installSelection" :items="installItems" dense selectable return-object @input="updateConfig"></v-treeview>
         <v-treeview v-model="baseSelection" :items="baseItems" dense selectable return-object @input="updateConfig"></v-treeview>
         <v-treeview v-model="plugSelection" :items="plugItems" dense selectable return-object @input="updateConfig"></v-treeview>
+        <v-treeview v-model="visualSelection" :items="visualItems" dense selectable return-object @input="updateConfig"></v-treeview>
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
@@ -33,22 +34,24 @@ export default {
     config: null,
     installSelection: [],
     baseSelection: [],
-    plugSelection: []
+    plugSelection: [],
+    visualSelection: []
   }),
   computed: {
-    ...mapState('checklist', ['installItems', 'baseItems', 'plugItems', 'installInit', 'baseInit', 'plugInit'])
+    ...mapState('checklist', ['installItems', 'baseItems', 'plugItems', 'visualItems', 'installInit', 'baseInit', 'plugInit', 'visualInit'])
   },
   mounted() {
     this.installSelection = this.installInit
     this.baseSelection = this.baseInit
     this.plugSelection = this.plugInit
+    this.visualSelection = this.visualInit
   },
   methods: {
     downloadConfig() {
       this.$download(this.config)
     },
     updateConfig(e) {
-      const concatSelection = [...this.installSelection, ...this.baseSelection, ...this.plugSelection]
+      const concatSelection = [...this.installSelection, ...this.baseSelection, ...this.plugSelection, ...this.visualSelection]
       const segment = concatSelection.map((v) => v.seg)
       const id = concatSelection.map((v) => v.id)
       this.config = this.$customText(segment.flat(), id)
