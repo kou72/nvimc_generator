@@ -15,7 +15,7 @@ export const state = () => ({
         { seg: 'base', id: 'tabstop', name: 'tabキーの幅を2文字分に設定' },
         { seg: 'base', id: 'shiftwidth', name: 'インデント幅を2文字分に設定' },
         { seg: 'base', id: 'expandtab', name: 'tabキーでスペースを挿入' },
-        { seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }
+        { seg: 'base', id: 'ignorecase', name: '大文字と小文字を区別せずに検索' }
       ]
     },
     {
@@ -58,7 +58,7 @@ export const state = () => ({
         { seg: 'base', id: 'tabstop', name: 'tabキーの幅を2文字分に設定' },
         { seg: 'base', id: 'shiftwidth', name: 'インデント幅を2文字分に設定' },
         { seg: 'base', id: 'expandtab', name: 'tabキーでスペースを挿入' },
-        { seg: 'base', id: 'ignorecase', name: '検索で大文字と小文字を区別しない' }
+        { seg: 'base', id: 'ignorecase', name: '大文字と小文字を区別せずに検索' }
       ]
     },
     {
