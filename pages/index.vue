@@ -8,7 +8,9 @@
       </v-col>
       <v-col cols="6">
         <!-- チェックボックス -->
-        <v-treeview v-model="selection" :items="Items" dense selectable return-object @input="updateConfig"></v-treeview>
+        <v-card>
+          <v-treeview v-model="selection" :items="Items" selectable hoverable dense return-object @input="updateConfig"></v-treeview>
+        </v-card>
       </v-col>
       <v-col cols="6">
         <!-- config テキスト -->
