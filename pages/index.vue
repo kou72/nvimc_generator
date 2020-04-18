@@ -6,13 +6,25 @@
         <Passing text="NeoVim Config Generator"></Passing>
         <v-divider class="mt-8"></v-divider>
       </v-col>
-      <v-col cols="6">
-        <!-- チェックボックス -->
-        <v-card>
-          <v-treeview v-model="selection" :items="Items" selectable hoverable dense return-object @input="updateConfig"></v-treeview>
-        </v-card>
+      <v-col cols="4">
+        <!-- Auto Install -->
+        <OpenCard title="Auto Install">
+          <v-checkbox v-for="item in items.install" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details class="my-0" @change="updateConfig" />
+        </OpenCard>
+        <!-- Base Setting -->
+        <OpenCard title="Base Setting">
+          <v-checkbox v-for="item in items.base" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details class="my-0" @change="updateConfig" />
+        </OpenCard>
+        <!-- Plugin -->
+        <OpenCard title="Plugin">
+          <v-checkbox v-for="item in items.plug" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details class="my-0" @change="updateConfig" />
+        </OpenCard>
+        <!-- Design -->
+        <OpenCard title="Visual">
+          <v-checkbox v-for="item in items.visual" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details class="my-0" @change="updateConfig" />
+        </OpenCard>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="8">
         <!-- config テキスト -->
         <prism language="js">{{ config }}</prism>
       </v-col>
@@ -26,20 +38,24 @@
 <script>
 import { mapState } from 'vuex'
 import Passing from '~/components/Passing' // 隠しボックスのアニメーション
+import OpenCard from '~/components/OpenCard' // 隠しボックスのアニメーション
 
 export default {
   components: {
-    Passing
+    Passing,
+    OpenCard
   },
   data: () => ({
     selection: [],
-    config: null
+    config: null,
+    show: false
   }),
   computed: {
-    ...mapState('checklist', ['Items', 'Init'])
+    ...mapState('checklist', ['items', 'init'])
   },
   mounted() {
-    this.selection = this.Init
+    this.selection = this.init
+    this.updateConfig()
   },
   methods: {
     downloadConfig() {
