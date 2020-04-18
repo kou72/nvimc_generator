@@ -41,7 +41,7 @@
 <script>
 import { mapState } from 'vuex'
 import Passing from '~/components/Passing' // 隠しボックスのアニメーション
-import OpenCard from '~/components/OpenCard' // 隠しボックスのアニメーション
+import OpenCard from '~/components/OpenCard'
 
 export default {
   components: {
