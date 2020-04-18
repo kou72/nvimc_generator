@@ -1,6 +1,6 @@
 <template>
   <v-card class="my-2">
-    <v-card-title>
+    <v-card-title class="subtitle-2 py-2">
       {{ title }}
       <v-btn icon class="ml-auto" @click="open = !open">
         <v-icon>{{ open ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>

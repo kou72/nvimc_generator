@@ -4,9 +4,9 @@ Vue.prototype.$customText = (seg, id) => {
   let baseText = ''
   // Plug自動インストール
   if (seg.includes('install'))
-    baseText += `\n"//*****************************************************
-"// Install vim-pulg
-"//*****************************************************
+    baseText += `\n"******************
+" Install vim-pulg 
+"******************
 if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
   echo 'install vim-plug...'
   call system('curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \\
@@ -15,9 +15,9 @@ endif\n`
 
   // 機能拡張
   if (seg.includes('plug'))
-    baseText += `\n"//*****************************************************
-"// Plug Install Packages
-"//*****************************************************
+    baseText += `\n"***********************
+" Plug Install Packages
+"***********************
 call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('dirtree')) baseText += "Plug 'preservim/nerdtree'\n"
   if (id.includes('comment')) baseText += "Plug 'sheerun/vim-polyglot'\n"
@@ -31,9 +31,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
 
   // 基本設定
   if (seg.includes('base'))
-    baseText += `\n"//*****************************************************
-"// Base Setting
-"//*****************************************************\n`
+    baseText += `\n"**************
+" Base Setting
+"**************\n`
   if (id.includes('clipboard')) baseText += 'set clipboard+=unnamedplus\n'
   if (id.includes('mouse')) baseText += 'set mouse=a\n'
   if (id.includes('tabstop')) baseText += 'set tabstop=2\n'
@@ -43,28 +43,28 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
 
   // 外観装飾
   if (seg.includes('visual'))
-    baseText += `\n"//*****************************************************
-"// Visual Settings
-"//*****************************************************\n`
+    baseText += `\n"*****************
+" Visual Settings
+"*****************\n`
   if (id.includes('syntax')) baseText += 'syntax on\n'
   if (id.includes('ruler')) baseText += 'set ruler\n'
   if (id.includes('number')) baseText += 'set number\n'
   if (id.includes('cursorline')) baseText += 'set cursorline\n'
   if (id.includes('termguicolors')) baseText += 'set termguicolors\n'
   if (id.includes('indentLin'))
-    baseText += `\n"// IndentLin
+    baseText += `\n" IndentLin
 let g:airline_theme = 'tomorrow'
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1\n`
   if (id.includes('airline'))
-    baseText += `\n"// vim-airline
+    baseText += `\n" vim-airline
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
-"// Tab Line
+" Tab Line
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_close_button = 0

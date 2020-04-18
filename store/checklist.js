@@ -23,6 +23,19 @@ export const state = () => ({
       { seg: 'visual', id: 'termguicolors', name: 'True Colorで配色' },
       { seg: ['visual', 'plug'], id: 'indentLin', name: 'インデントを縦線で表示' },
       { seg: ['visual', 'plug'], id: 'airline', name: 'ステータスバー表示' }
+    ],
+    languages: [
+      { seg: 'lung', id: 'c', name: 'C言語' },
+      { seg: 'lung', id: 'go', name: 'Go' },
+      { seg: 'lung', id: 'html', name: 'HTML' },
+      { seg: 'lung', id: 'javascript', name: 'JavaScript' },
+      { seg: 'lung', id: 'perl', name: 'Perl' },
+      { seg: 'lung', id: 'php', name: 'PHP' },
+      { seg: 'lung', id: 'python', name: 'Python' },
+      { seg: 'lung', id: 'ruby', name: 'Ruby' },
+      { seg: 'lung', id: 'scala', name: 'Scala' },
+      { seg: 'lung', id: 'typescript', name: 'TypeScript' },
+      { seg: 'lung', id: 'vuejs', name: 'Vue.js' }
     ]
   },
 
