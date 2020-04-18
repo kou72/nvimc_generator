@@ -1,5 +1,4 @@
 <template>
-  <!-- 基本設定 -->
   <v-card class="my-2">
     <v-card-title>
       {{ title }}
