@@ -74,7 +74,9 @@ export default {
 /* configテキストの調整 */
 code[class*='language-'] {
   box-shadow: none;
-  font-size: x-small;
+  font-size: small;
+  max-height: 64em;
+  overflow: auto;
 }
 .v-application code:before {
   content: none;

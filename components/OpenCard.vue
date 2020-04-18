@@ -2,12 +2,12 @@
   <v-card class="my-2">
     <v-card-title>
       {{ title }}
-      <v-btn icon class="ml-auto" @click="show = !show">
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+      <v-btn icon class="ml-auto" @click="open = !open">
+        <v-icon>{{ open ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
       </v-btn>
     </v-card-title>
     <v-expand-transition>
-      <div v-show="show" class="px-4 pb-4">
+      <div v-show="open" class="px-4 pb-4">
         <slot></slot>
       </div>
     </v-expand-transition>
@@ -22,7 +22,7 @@ export default {
     }
   },
   data: () => ({
-    show: true
+    open: false
   })
 }
 </script>
