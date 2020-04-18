@@ -16,13 +16,14 @@
 <script>
 export default {
   props: {
+    open: {
+      type: String,
+      required: true
+    },
     title: {
       type: String,
       required: true
     }
-  },
-  data: () => ({
-    open: false
-  })
+  }
 }
 </script>

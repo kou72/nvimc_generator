@@ -24,7 +24,7 @@
           <v-checkbox v-for="item in items.visual" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details dense class="my-0" @change="updateConfig" />
         </OpenCard>
         <!-- languages  -->
-        <OpenCard title="Supported Languages">
+        <OpenCard title="Supported Languages" open="true">
           <v-checkbox v-for="item in items.languages" :key="item.id" v-model="selection" :label="item.name" :value="item" hide-details dense class="my-0" @change="updateConfig" />
         </OpenCard>
       </v-col>
