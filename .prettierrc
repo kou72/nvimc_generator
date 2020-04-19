@@ -3,5 +3,5 @@
   "arrowParens": "always",
   "singleQuote": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "printWidth": 192
+  "printWidth": 128
 }
