@@ -17,7 +17,7 @@
 export default {
   props: {
     open: {
-      type: String,
+      type: Boolean,
       required: true
     },
     title: {

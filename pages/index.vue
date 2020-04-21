@@ -8,8 +8,8 @@
       </v-col>
       <v-col cols="4">
         <!-- Auto Install -->
-        <OpenCard title="Default Setting">
-          <OpenCard title="Auto Install">
+        <OpenCard title="Default Setting" :open="false">
+          <OpenCard title="Auto Install" :open="false">
             <v-checkbox
               v-for="item in items.install"
               :key="item.id"
@@ -23,7 +23,7 @@
             />
           </OpenCard>
           <!-- Base Setting -->
-          <OpenCard title="Base Setting">
+          <OpenCard title="Base Setting" :open="false">
             <v-checkbox
               v-for="item in items.base"
               :key="item.id"
@@ -37,7 +37,7 @@
             />
           </OpenCard>
           <!-- Plugin -->
-          <OpenCard title="Plugin">
+          <OpenCard title="Plugin" :open="false">
             <v-checkbox
               v-for="item in items.plug"
               :key="item.id"
@@ -51,7 +51,7 @@
             />
           </OpenCard>
           <!-- Design -->
-          <OpenCard title="Visual">
+          <OpenCard title="Visual" :open="false">
             <v-checkbox
               v-for="item in items.visual"
               :key="item.id"
@@ -66,7 +66,7 @@
           </OpenCard>
         </OpenCard>
         <!-- languages  -->
-        <OpenCard title="Supported Languages" open="true">
+        <OpenCard title="Supported Languages" :open="false">
           <v-checkbox
             v-for="item in items.languages"
             :key="item.id"
@@ -76,9 +76,17 @@
             hide-details
             dense
             class="my-0"
-            @change="updateConfig"
+            @change="$emit('input', $event.target.checked)"
           />
         </OpenCard>
+        <!-- <CheckBoxCard :selection="selection" title="test" :items="items.base" :open="false" /> -->
+        <v-checkbox
+          v-for="item in items.base"
+          :key="item.id"
+          :label="item.name"
+          :input-value="item"
+          @change="updateValue(item, $event)"
+        />
       </v-col>
       <v-col cols="8">
         <!-- config テキスト -->
@@ -94,11 +102,13 @@
 import { mapState } from 'vuex'
 import Passing from '~/components/Passing' // 隠しボックスのアニメーション
 import OpenCard from '~/components/OpenCard'
+// import CheckBoxCard from '~/components/CheckBoxCard'
 
 export default {
   components: {
     Passing,
     OpenCard
+    // CheckBoxCard
   },
   data: () => ({
     selection: [],
@@ -119,6 +129,13 @@ export default {
       const segment = this.selection.map((v) => v.seg)
       const id = this.selection.map((v) => v.id)
       this.config = this.$customText(segment.flat(), id)
+    },
+    updateValue(item, e) {
+      if (e) {
+        this.selection.push(item)
+      } else {
+        this.selection = this.selection.filter((v) => v.id !== item.id)
+      }
     }
   }
 }
