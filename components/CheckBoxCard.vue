@@ -12,7 +12,7 @@
           v-for="item in items"
           :key="item.id"
           :label="item.name"
-          :value="item"
+          :input-value="item"
           hide-details
           dense
           class="my-0"
