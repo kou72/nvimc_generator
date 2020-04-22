@@ -7,86 +7,15 @@
         <v-divider class="mt-8"></v-divider>
       </v-col>
       <v-col cols="4">
-        <!-- Auto Install -->
+        <!-- Default Setting -->
         <OpenCard title="Default Setting" :open="false">
-          <OpenCard title="Auto Install" :open="false">
-            <v-checkbox
-              v-for="item in items.install"
-              :key="item.id"
-              v-model="selection"
-              :label="item.name"
-              :value="item"
-              hide-details
-              dense
-              class="my-0"
-              @change="updateConfig"
-            />
-          </OpenCard>
-          <!-- Base Setting -->
-          <OpenCard title="Base Setting" :open="false">
-            <v-checkbox
-              v-for="item in items.base"
-              :key="item.id"
-              v-model="selection"
-              :label="item.name"
-              :value="item"
-              hide-details
-              dense
-              class="my-0"
-              @change="updateConfig"
-            />
-          </OpenCard>
-          <!-- Plugin -->
-          <OpenCard title="Plugin" :open="false">
-            <v-checkbox
-              v-for="item in items.plug"
-              :key="item.id"
-              v-model="selection"
-              :label="item.name"
-              :value="item"
-              hide-details
-              dense
-              class="my-0"
-              @change="updateConfig"
-            />
-          </OpenCard>
-          <!-- Design -->
-          <OpenCard title="Visual" :open="false">
-            <v-checkbox
-              v-for="item in items.visual"
-              :key="item.id"
-              v-model="selection"
-              :label="item.name"
-              :value="item"
-              hide-details
-              dense
-              class="my-0"
-              @change="updateConfig"
-            />
-          </OpenCard>
+          <CheckBoxCard title="Auto Install" :items="items.install" :open="false" @emit="updateSelection($event)" />
+          <CheckBoxCard title="Base Setting" :items="items.base" :open="false" @emit="updateSelection($event)" />
+          <CheckBoxCard title="Plugin" :items="items.plug" :open="false" @emit="updateSelection($event)" />
+          <CheckBoxCard title="Visual" :items="items.visual" :open="false" @emit="updateSelection($event)" />
         </OpenCard>
         <!-- languages  -->
-        <OpenCard title="Supported Languages" :open="false">
-          <v-checkbox
-            v-for="item in items.languages"
-            :key="item.id"
-            v-model="selection"
-            :label="item.name"
-            :value="item"
-            hide-details
-            dense
-            class="my-0"
-            @change="$emit('input', $event.target.checked)"
-          />
-        </OpenCard>
-        <!-- <CheckBoxCard :selection="selection" title="test" :items="items.base" :open="false" /> -->
-        <v-checkbox
-          v-for="item in items.base"
-          :key="item.id"
-          :label="item.name"
-          :input-value="item"
-          @change="updateValue(item, $event)"
-        />
+        <CheckBoxCard title="Supported Languages" :items="items.languages" :open="true" @emit="updateSelection($event)" />
       </v-col>
       <v-col cols="8">
         <!-- config テキスト -->
@@ -102,13 +31,13 @@
 import { mapState } from 'vuex'
 import Passing from '~/components/Passing' // 隠しボックスのアニメーション
 import OpenCard from '~/components/OpenCard'
-// import CheckBoxCard from '~/components/CheckBoxCard'
+import CheckBoxCard from '~/components/CheckBoxCard'
 
 export default {
   components: {
     Passing,
-    OpenCard
-    // CheckBoxCard
+    OpenCard,
+    CheckBoxCard
   },
   data: () => ({
     selection: [],
@@ -130,12 +59,13 @@ export default {
       const id = this.selection.map((v) => v.id)
       this.config = this.$customText(segment.flat(), id)
     },
-    updateValue(item, e) {
-      if (e) {
-        this.selection.push(item)
+    updateSelection(e) {
+      if (e.event) {
+        this.selection.push(e.item)
       } else {
-        this.selection = this.selection.filter((v) => v.id !== item.id)
+        this.selection = this.selection.filter((v) => v.id !== e.item.id)
       }
+      this.updateConfig()
     }
   }
 }
