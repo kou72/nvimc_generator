@@ -8,8 +8,8 @@
       </v-col>
       <v-col cols="4">
         <!-- Auto Install -->
-        <OpenCard title="Default Setting">
-          <OpenCard title="Auto Install">
+        <OpenCard title="Default Setting" :open="false">
+          <OpenCard title="Auto Install" :open="true">
             <v-checkbox
               v-for="item in items.install"
               :key="item.id"
@@ -23,7 +23,7 @@
             />
           </OpenCard>
           <!-- Base Setting -->
-          <OpenCard title="Base Setting">
+          <OpenCard title="Base Setting" :open="true">
             <v-checkbox
               v-for="item in items.base"
               :key="item.id"
@@ -37,7 +37,7 @@
             />
           </OpenCard>
           <!-- Plugin -->
-          <OpenCard title="Plugin">
+          <OpenCard title="Plugin" :open="true">
             <v-checkbox
               v-for="item in items.plug"
               :key="item.id"
@@ -51,7 +51,7 @@
             />
           </OpenCard>
           <!-- Design -->
-          <OpenCard title="Visual">
+          <OpenCard title="Visual" :open="true">
             <v-checkbox
               v-for="item in items.visual"
               :key="item.id"
@@ -66,7 +66,7 @@
           </OpenCard>
         </OpenCard>
         <!-- languages  -->
-        <OpenCard title="Supported Languages" open="true">
+        <OpenCard title="Supported Languages" :open="true">
           <v-checkbox
             v-for="item in items.languages"
             :key="item.id"
