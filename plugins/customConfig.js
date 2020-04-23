@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.prototype.$customConfig = (seg, id) => {
+Vue.prototype.$customConfig = (seg, id, map) => {
   let baseText = ''
   // Plug自動インストール
   if (seg.includes('install'))
@@ -73,7 +73,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'\n`
 
   if (seg.includes('serv'))
-    baseText += `\n"************
+    baseText += `\n"*************
 " Code Check
 "************
 if !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-highlight'))
@@ -155,5 +155,6 @@ endif\n`
   autocmd FileType * :CocInstall coc-prettier
 endif\n`
 
+  baseText += '\n' + map + '\n'
   return baseText.trim()
 }

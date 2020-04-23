@@ -6,7 +6,7 @@
         <Passing text="NeoVim Config Generator"></Passing>
         <v-divider class="mt-8"></v-divider>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="5">
         <!-- Auto Install -->
         <OpenCard title="Default Setting" :open="false">
           <OpenCard title="Auto Install" :open="true">
@@ -99,8 +99,12 @@
             </v-col>
           </v-row>
         </OpenCard>
+        <OpenCard title="Mapping" :open="false">
+          <!-- mapping -->
+          <v-textarea class="body-2" :value="map" rows="12" filled hide-details @input="updateMap"></v-textarea>
+        </OpenCard>
       </v-col>
-      <v-col cols="8">
+      <v-col cols="7">
         <!-- config テキスト -->
         <prism language="js">{{ config }}</prism>
         <!-- ダウンロードボタン -->
@@ -122,13 +126,15 @@ export default {
   },
   data: () => ({
     selection: [],
-    config: null
+    config: null,
+    map: null
   }),
   computed: {
-    ...mapState('checklist', ['items', 'init'])
+    ...mapState('checklist', ['items', 'init', 'mapInit'])
   },
   mounted() {
     this.selection = this.init
+    this.map = this.mapInit
     this.updateConfig()
   },
   methods: {
@@ -138,7 +144,11 @@ export default {
     updateConfig(e) {
       const segment = this.selection.map((v) => v.seg)
       const id = this.selection.map((v) => v.id)
-      this.config = this.$customConfig(segment.flat(), id)
+      this.config = this.$customConfig(segment.flat(), id, this.map)
+    },
+    updateMap(e) {
+      this.map = e
+      this.updateConfig()
     }
   }
 }
@@ -157,5 +167,9 @@ code[class*='language-'] {
 }
 .v-label {
   font-size: small;
+}
+.v-textarea textarea {
+  font-family: monospace;
+  line-height: normal;
 }
 </style>

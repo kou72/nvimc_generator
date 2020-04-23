@@ -63,5 +63,44 @@ export const state = () => ({
     { seg: 'visual', id: 'termguicolors', name: 'True Colorで配色' },
     { seg: ['visual', 'plug'], id: 'indentLin', name: 'インデントを縦線で表示' },
     { seg: ['visual', 'plug'], id: 'airline', name: 'ステータスバー表示' }
-  ]
+  ],
+
+  // Mapping init
+  mapInit: `"**********
+" Mappings
+"**********
+" Insert mode move
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+imap <C-h> <Left>
+
+" Switching windows
+nnoremap J <C-w>ji<C-c>
+nnoremap K <C-w>k
+nnoremap L <C-w>l
+nnoremap H <C-w>h
+tnoremap K <C-\\><C-n><C-w>k
+
+" Tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <silent> <C-n> :tabnew<CR>:NERDTreeToggle<CR>
+
+" Error
+nnoremap <silent><C-o> :copen<CR>
+nnoremap <silent><C-c> :cclose<CR>
+
+" NERDTree
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
+
+" terminal
+nnoremap <Space> <C-w>s<C-w>j:term<CR>i
+tnoremap <C-n> <C-\\><C-n>
+tnoremap <Esc> <C-\\><C-n>:q<CR>
+nnoremap <Esc> a<Esc>
+
+" nnoremap F :call CocAction('format')<CR>
+nnoremap F :CocCommand prettier.formatFile<CR>
+`
 })
