@@ -37,7 +37,11 @@ export const state = () => ({
       { seg: 'serv', id: 'scala', name: 'Scala' },
       { seg: 'serv', id: 'go', name: 'Go' },
       { seg: 'serv', id: 'vuejs', name: 'Vue.js' },
-      { seg: 'serv', id: 'angular', name: 'Angular' }
+      { seg: 'serv', id: 'angular', name: 'Angular' },
+      { seg: 'serv', id: 'json', name: 'json' },
+      { seg: 'serv', id: 'yaml', name: 'yaml' },
+      { seg: 'serv', id: 'eslint', name: 'ESlint' },
+      { seg: 'serv', id: 'prettier', name: 'Prettier' }
     ]
   },
 
