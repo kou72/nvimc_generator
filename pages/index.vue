@@ -65,19 +65,38 @@
             />
           </OpenCard>
         </OpenCard>
-        <!-- languages  -->
-        <OpenCard title="Supported Languages" :open="true">
-          <v-checkbox
-            v-for="item in items.languages"
-            :key="item.id"
-            v-model="selection"
-            :label="item.name"
-            :value="item"
-            hide-details
-            dense
-            class="my-0"
-            @change="updateConfig"
-          />
+        <!-- service  -->
+        <OpenCard title="Serport Service" :open="true">
+          <v-row>
+            <v-col>
+              <div v-for="(item, index) in items.service" :key="item.id">
+                <v-checkbox
+                  v-if="index % 2 == 0"
+                  v-model="selection"
+                  :label="item.name"
+                  :value="item"
+                  hide-details
+                  dense
+                  class="my-0"
+                  @change="updateConfig"
+                />
+              </div>
+            </v-col>
+            <v-col>
+              <div v-for="(item, index) in items.service" :key="item.id">
+                <v-checkbox
+                  v-if="index % 2 == 1"
+                  v-model="selection"
+                  :label="item.name"
+                  :value="item"
+                  hide-details
+                  dense
+                  class="my-0"
+                  @change="updateConfig"
+                />
+              </div>
+            </v-col>
+          </v-row>
         </OpenCard>
       </v-col>
       <v-col cols="8">
@@ -128,8 +147,8 @@ export default {
 /* configテキストの調整 */
 code[class*='language-'] {
   box-shadow: none;
-  font-size: small;
-  max-height: 32em;
+  font-size: x-small;
+  max-height: 48em;
   overflow: auto;
 }
 .v-application code:before {

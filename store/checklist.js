@@ -24,18 +24,20 @@ export const state = () => ({
       { seg: ['visual', 'plug'], id: 'indentLin', name: 'インデントを縦線で表示' },
       { seg: ['visual', 'plug'], id: 'airline', name: 'ステータスバー表示' }
     ],
-    languages: [
-      { seg: 'lung', id: 'c', name: 'C言語' },
-      { seg: 'lung', id: 'go', name: 'Go' },
-      { seg: 'lung', id: 'html', name: 'HTML' },
-      { seg: 'lung', id: 'javascript', name: 'JavaScript' },
-      { seg: 'lung', id: 'perl', name: 'Perl' },
-      { seg: 'lung', id: 'php', name: 'PHP' },
-      { seg: 'lung', id: 'python', name: 'Python' },
-      { seg: 'lung', id: 'ruby', name: 'Ruby' },
-      { seg: 'lung', id: 'scala', name: 'Scala' },
-      { seg: 'lung', id: 'typescript', name: 'TypeScript' },
-      { seg: 'lung', id: 'vuejs', name: 'Vue.js' }
+    service: [
+      { seg: 'serv', id: 'c', name: 'C言語' },
+      { seg: 'serv', id: 'html', name: 'HTML' },
+      { seg: 'serv', id: 'css', name: 'CSS/SCSS' },
+      { seg: 'serv', id: 'javascript', name: 'JavaScript' },
+      { seg: 'serv', id: 'typescript', name: 'TypeScript' },
+      { seg: 'serv', id: 'perl', name: 'Perl' },
+      { seg: 'serv', id: 'php', name: 'PHP' },
+      { seg: 'serv', id: 'python', name: 'Python' },
+      { seg: 'serv', id: 'ruby', name: 'Ruby' },
+      { seg: 'serv', id: 'scala', name: 'Scala' },
+      { seg: 'serv', id: 'go', name: 'Go' },
+      { seg: 'serv', id: 'vuejs', name: 'Vue.js' },
+      { seg: 'serv', id: 'angular', name: 'Angular' }
     ]
   },
 
