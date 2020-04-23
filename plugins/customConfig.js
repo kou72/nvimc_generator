@@ -27,6 +27,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('indentLin')) baseText += "Plug 'Yggdroot/indentLine'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline-themes'\n"
+  if (seg.includes('serv')) baseText += "Plug 'neoclide/coc.nvim', {'branch': 'release'}\n"
   if (seg.includes('plug')) baseText += 'call plug#end()\n'
 
   // 基本設定
@@ -70,6 +71,89 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'\n`
+
+  if (seg.includes('serv'))
+    baseText += `\n"************
+" Code Check
+"************
+if !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-highlight'))
+  autocmd FileType * :CocInstall coc-highlight
+endif\n`
+
+  if (id.includes('c'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-clangd'))
+  autocmd FileType * :CocInstall coc-clangd
+endif\n`
+
+  if (id.includes('html'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-html'))
+  autocmd FileType * :CocInstall coc-html
+endif\n`
+
+  if (id.includes('css'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-css'))
+  autocmd FileType * :CocInstall coc-css
+endif\n`
+
+  if (id.includes('js') || id.includes('ts'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-tsserver'))
+  autocmd FileType * :CocInstall coc-tsserver
+endif\n`
+
+  if (id.includes('php'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-phpls'))
+  autocmd FileType * :CocInstall coc-phpls
+endif\n`
+
+  if (id.includes('python'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-python'))
+  autocmd FileType * :CocInstall coc-python
+endif\n`
+
+  if (id.includes('ruby'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-solargraph'))
+  autocmd FileType * :CocInstall coc-solargraph
+endif\n`
+
+  if (id.includes('scala'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-metals'))
+  autocmd FileType * :CocInstall coc-metals
+endif\n`
+
+  if (id.includes('go'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-go'))
+  autocmd FileType * :CocInstall coc-go
+endif\n`
+
+  if (id.includes('vue'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-vetur'))
+  autocmd FileType * :CocInstall coc-vetur
+endif\n`
+
+  if (id.includes('angular'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-angular'))
+  autocmd FileType * :CocInstall coc-angular
+endif\n`
+
+  if (id.includes('json'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-json'))
+  autocmd FileType * :CocInstall coc-json
+endif\n`
+
+  if (id.includes('yaml'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-yaml'))
+  autocmd FileType * :CocInstall coc-yaml
+endif\n`
+
+  if (id.includes('eslint'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-eslint'))
+  autocmd FileType * :CocInstall coc-eslint
+endif\n`
+
+  if (id.includes('prettier'))
+    baseText += `\nif !isdirectory(expand('~/.config/coc/extensions/node_modules/coc-prettier'))
+  autocmd FileType * :CocInstall coc-prettier
+endif\n`
 
   return baseText.trim()
 }

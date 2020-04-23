@@ -67,6 +67,7 @@
         </OpenCard>
         <!-- service  -->
         <OpenCard title="Serport Service" :open="true">
+          <p class="caption ma-0">*node.js is required!</p>
           <v-row>
             <v-col>
               <div v-for="(item, index) in items.service" :key="item.id">
