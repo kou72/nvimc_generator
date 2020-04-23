@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.prototype.$customText = (seg, id) => {
+Vue.prototype.$customConfig = (seg, id) => {
   let baseText = ''
   // Plug自動インストール
   if (seg.includes('install'))

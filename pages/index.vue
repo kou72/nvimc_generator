@@ -137,7 +137,7 @@ export default {
     updateConfig(e) {
       const segment = this.selection.map((v) => v.seg)
       const id = this.selection.map((v) => v.id)
-      this.config = this.$customText(segment.flat(), id)
+      this.config = this.$customConfig(segment.flat(), id)
     }
   }
 }
