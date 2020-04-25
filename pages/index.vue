@@ -122,24 +122,19 @@
       <v-row>
         <v-col cols="3" class="download">
           <!-- ダウンロードボタン -->
-          <div style="margin-top: 30vh" />
-          <v-btn class="mb-4" dark outlined depressed width="20vh" height="20vh" fab @click="downloadConfig">
+          <v-btn dark outlined depressed fab @click="downloadConfig">
             <v-icon size="4vw">mdi-download</v-icon>
           </v-btn>
           <p class="discription">download</p>
         </v-col>
         <!-- ファイルコピー -->
         <v-col cols="6" class="download">
-          <div style="margin-top: 35vh" />
-          <prism>> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
-          <div style="margin-top: 9vh" />
+          <prism class="shell">> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
           <p class="discription">move file</p>
         </v-col>
         <!-- ファイルを開く -->
         <v-col cols="3" class="download">
-          <div style="margin-top: 35vh" />
-          <prism>> nvim</prism>
-          <div style="margin-top: 9vh" />
+          <prism class="shell">> nvim</prism>
           <p class="discription">open file</p>
         </v-col>
       </v-row>
@@ -190,7 +185,8 @@ h1 {
   font-size: 8vw;
   font-weight: 100;
   font-family: unset;
-  padding-bottom: 20vh;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
 }
 .discription {
   font-size: 2vw;
@@ -199,7 +195,6 @@ h1 {
 }
 .title {
   text-align: center;
-  margin-top: 30vh;
 }
 .checkbox {
   max-height: 90vh;
@@ -217,8 +212,18 @@ h1 {
 .download {
   text-align: center;
 }
+/* テキストを上から52%の位置で揃える */
 .download .v-btn {
   background-color: #00000080;
+  width: 20vh;
+  height: 20vh;
+  margin-top: 30vh;
+  margin-bottom: 2vh;
+}
+.download .shell {
+  height: 8vh;
+  margin-top: 36vh;
+  margin-bottom: 8vh;
 }
 .v-label {
   font-size: small;
