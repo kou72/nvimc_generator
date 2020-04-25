@@ -75,6 +75,10 @@ imap <C-k> <Up>
 imap <C-l> <Right>
 imap <C-h> <Left>
 
+" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
 " Switching windows
 nnoremap J <C-w>ji<C-c>
 nnoremap K <C-w>k
@@ -87,9 +91,8 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <C-n> :tabnew<CR>:NERDTreeToggle<CR>
 
-" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+" NERDTree
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
 
 " Git
 noremap <Leader>ga :Gwrite<CR>
@@ -104,9 +107,6 @@ noremap <Leader>gr :Gremove<CR>
 " Error
 nnoremap <silent><C-o> :copen<CR>
 nnoremap <silent><C-c> :cclose<CR>
-
-" NERDTree
-nnoremap <silent><C-t> :NERDTreeToggle<CR>
 
 " terminal
 nnoremap <Space> <C-w>s<C-w>j:term<CR>i
