@@ -8,7 +8,7 @@
     </v-card-title>
     <v-expand-transition>
       <div v-show="openState" class="px-4 pb-4">
-        <slot class="slot"></slot>
+        <slot></slot>
       </div>
     </v-expand-transition>
   </v-card>

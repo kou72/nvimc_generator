@@ -75,7 +75,7 @@
           </OpenCard>
           <!-- service  -->
           <OpenCard title="Serport Service" :open="true">
-            <p class="caption ma-0">*node.js is required!</p>
+            <p class="caption ma-0">*node.jsが必須です!</p>
             <v-row>
               <v-col>
                 <div v-for="(item, index) in items.service" :key="item.id">
@@ -220,6 +220,10 @@ h1 {
 .download .v-btn {
   background-color: #00000080;
 }
+.v-label {
+  font-size: small;
+}
+
 /* configテキストの調整 */
 code[class*='language-'] {
   box-shadow: none;
