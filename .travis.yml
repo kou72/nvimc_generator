@@ -1,6 +1,6 @@
 nguage: node_js
 node_js:
-- v13.12.0
+- v12.12.0
 script:
 - npm install -g firebase-tools@8.1.1
 - npm --prefix "./functions" ci
