@@ -122,7 +122,7 @@
       <v-row>
         <v-col cols="3" class="download">
           <!-- ダウンロードボタン -->
-          <v-btn dark outlined depressed fab @click="downloadConfig">
+          <v-btn dark outlined depressed fab width="20vh" height="20vh" @click="downloadConfig">
             <v-icon size="4vw">mdi-download</v-icon>
           </v-btn>
           <p class="discription">download</p>
@@ -215,8 +215,6 @@ h1 {
 /* テキストを上から52%の位置で揃える */
 .download .v-btn {
   background-color: #00000080;
-  width: 20vh;
-  height: 20vh;
   margin-top: 30vh;
   margin-bottom: 2vh;
 }
