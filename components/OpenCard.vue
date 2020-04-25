@@ -8,7 +8,7 @@
     </v-card-title>
     <v-expand-transition>
       <div v-show="openState" class="px-4 pb-4">
-        <slot></slot>
+        <slot class="slot"></slot>
       </div>
     </v-expand-transition>
   </v-card>
@@ -33,3 +33,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-label {
+  font-size: small;
+}
+.v-textarea textarea {
+  font-family: monospace;
+  line-height: normal;
+}
+</style>
