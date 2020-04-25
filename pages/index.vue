@@ -3,7 +3,14 @@
     <div class="page-container">
       <!-- Title -->
       <section class="area">
-        <Passing text="NeoVim Config Generator"></Passing>
+        <div class="title">
+          <h1>
+            NeoVimC Generator
+          </h1>
+          <p class="discription">step1 : checked</p>
+          <p class="discription">step2 : download</p>
+          <p class="discription">step3 : open neovim</p>
+        </div>
       </section>
       <!-- Contents -->
       <section class="area">
@@ -112,28 +119,33 @@
           </v-col>
         </v-row>
       </section>
-      <section class="area">3</section>
-      <section class="area">4</section>
-      <section class="area">5</section>
-      <section class="area">1</section>
-      <section class="area">2</section>
-      <section class="area">3</section>
-      <section class="area">4</section>
-      <section class="area">5</section>
+      <section class="area">
+        <v-row>
+          <v-col cols="3" class="download">
+            <!-- ダウンロードボタン -->
+            <v-btn class="mb-4" dark outlined depressed width="20vh" height="20vh" fab @click="downloadConfig">
+              <v-icon size="4vw">mdi-download</v-icon>
+            </v-btn>
+            <p class="discription">download</p>
+          </v-col>
+          <v-col cols="6" class="download">
+            <div style="margin-top: 50vh" />
+            <prism language="js">mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
+          </v-col>
+        </v-row>
+      </section>
     </div>
   </v-container>
-  <!--       <!-1- ダウンロードボタン -1-> -->
-  <!--       <v-btn class="mb-4" @click="downloadConfig">ダウンロード</v-btn> -->
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import Passing from '~/components/Passing' // 隠しボックスのアニメーション
+// import Passing from '~/components/Passing' // 隠しボックスのアニメーション
 import OpenCard from '~/components/OpenCard'
 
 export default {
   components: {
-    Passing,
+    // Passing,
     OpenCard
   },
   data: () => ({
@@ -167,6 +179,21 @@ export default {
 </script>
 
 <style>
+h1 {
+  font-size: 8vw;
+  font-weight: 100;
+  font-family: unset;
+  padding-bottom: 20vh;
+}
+.discription {
+  font-size: 2vw;
+  font-weight: 300;
+  font-family: unset;
+}
+.title {
+  text-align: center;
+  margin-top: 30vh;
+}
 .checkbox {
   max-height: 90vh;
   overflow: auto;
@@ -179,6 +206,13 @@ export default {
   padding-top: 0;
   padding-bottom: 0;
   font-size: x-small;
+}
+.download {
+  text-align: center;
+}
+.download .v-btn {
+  margin-top: 30vh;
+  background-color: #00000080;
 }
 /* configテキストの調整 */
 code[class*='language-'] {
