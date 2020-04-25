@@ -15,3 +15,11 @@ export default {
   }
 }
 </script>
+<style>
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>

@@ -34,7 +34,7 @@ export default {
   plugins: [
     '~/plugins/trianglify.js',
     '~/plugins/download.js',
-    '~/plugins/customText.js',
+    '~/plugins/customConfig.js',
     { src: '@/plugins/prism', ssr: false }
   ],
 

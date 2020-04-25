@@ -24,18 +24,23 @@ export const state = () => ({
       { seg: ['visual', 'plug'], id: 'indentLin', name: 'インデントを縦線で表示' },
       { seg: ['visual', 'plug'], id: 'airline', name: 'ステータスバー表示' }
     ],
-    languages: [
-      { seg: 'lung', id: 'c', name: 'C言語' },
-      { seg: 'lung', id: 'go', name: 'Go' },
-      { seg: 'lung', id: 'html', name: 'HTML' },
-      { seg: 'lung', id: 'javascript', name: 'JavaScript' },
-      { seg: 'lung', id: 'perl', name: 'Perl' },
-      { seg: 'lung', id: 'php', name: 'PHP' },
-      { seg: 'lung', id: 'python', name: 'Python' },
-      { seg: 'lung', id: 'ruby', name: 'Ruby' },
-      { seg: 'lung', id: 'scala', name: 'Scala' },
-      { seg: 'lung', id: 'typescript', name: 'TypeScript' },
-      { seg: 'lung', id: 'vuejs', name: 'Vue.js' }
+    service: [
+      { seg: 'serv', id: 'c', name: 'C言語' },
+      { seg: 'serv', id: 'html', name: 'HTML' },
+      { seg: 'serv', id: 'css', name: 'CSS/SCSS' },
+      { seg: 'serv', id: 'js', name: 'JavaScript' },
+      { seg: 'serv', id: 'ts', name: 'TypeScript' },
+      { seg: 'serv', id: 'php', name: 'PHP' },
+      { seg: 'serv', id: 'python', name: 'Python' },
+      { seg: 'serv', id: 'ruby', name: 'Ruby' },
+      { seg: 'serv', id: 'scala', name: 'Scala' },
+      { seg: 'serv', id: 'go', name: 'Go' },
+      { seg: 'serv', id: 'vue', name: 'Vue.js' },
+      { seg: 'serv', id: 'angular', name: 'Angular' },
+      { seg: 'serv', id: 'json', name: 'json' },
+      { seg: 'serv', id: 'yaml', name: 'yaml' },
+      { seg: 'serv', id: 'eslint', name: 'ESlint' },
+      { seg: 'serv', id: 'prettier', name: 'Prettier' }
     ]
   },
 
@@ -58,5 +63,44 @@ export const state = () => ({
     { seg: 'visual', id: 'termguicolors', name: 'True Colorで配色' },
     { seg: ['visual', 'plug'], id: 'indentLin', name: 'インデントを縦線で表示' },
     { seg: ['visual', 'plug'], id: 'airline', name: 'ステータスバー表示' }
-  ]
+  ],
+
+  // Mapping init
+  mapInit: `"**********
+" Mappings
+"**********
+" Insert mode move
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+imap <C-h> <Left>
+
+" Switching windows
+nnoremap J <C-w>ji<C-c>
+nnoremap K <C-w>k
+nnoremap L <C-w>l
+nnoremap H <C-w>h
+tnoremap K <C-\\><C-n><C-w>k
+
+" Tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <silent> <C-n> :tabnew<CR>:NERDTreeToggle<CR>
+
+" Error
+nnoremap <silent><C-o> :copen<CR>
+nnoremap <silent><C-c> :cclose<CR>
+
+" NERDTree
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
+
+" terminal
+nnoremap <Space> <C-w>s<C-w>j:term<CR>i
+tnoremap <C-n> <C-\\><C-n>
+tnoremap <Esc> <C-\\><C-n>:q<CR>
+nnoremap <Esc> a<Esc>
+
+" nnoremap F :call CocAction('format')<CR>
+nnoremap F :CocCommand prettier.formatFile<CR>
+`
 })
