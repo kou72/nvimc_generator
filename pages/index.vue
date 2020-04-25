@@ -129,12 +129,12 @@
         </v-col>
         <!-- ファイルコピー -->
         <v-col cols="6" class="download">
-          <prism class="shell">> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
+          <prism>> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
           <p class="discription">move file</p>
         </v-col>
         <!-- ファイルを開く -->
         <v-col cols="3" class="download">
-          <prism class="shell">> nvim</prism>
+          <prism>> nvim</prism>
           <p class="discription">open file</p>
         </v-col>
       </v-row>
