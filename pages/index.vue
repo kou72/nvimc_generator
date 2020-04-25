@@ -123,14 +123,25 @@
         <v-row>
           <v-col cols="3" class="download">
             <!-- ダウンロードボタン -->
+            <div style="margin-top: 30vh" />
             <v-btn class="mb-4" dark outlined depressed width="20vh" height="20vh" fab @click="downloadConfig">
               <v-icon size="4vw">mdi-download</v-icon>
             </v-btn>
             <p class="discription">download</p>
           </v-col>
+          <!-- ファイルコピー -->
           <v-col cols="6" class="download">
-            <div style="margin-top: 50vh" />
-            <prism language="js">mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
+            <div style="margin-top: 35vh" />
+            <prism>> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
+            <div style="margin-top: 9vh" />
+            <p class="discription">move file</p>
+          </v-col>
+          <!-- ファイルを開く -->
+          <v-col cols="3" class="download">
+            <div style="margin-top: 35vh" />
+            <prism>> nvim</prism>
+            <div style="margin-top: 9vh" />
+            <p class="discription">open file</p>
           </v-col>
         </v-row>
       </section>
@@ -211,7 +222,6 @@ h1 {
   text-align: center;
 }
 .download .v-btn {
-  margin-top: 30vh;
   background-color: #00000080;
 }
 /* configテキストの調整 */
