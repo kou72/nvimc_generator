@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// background image
 export default {
   mounted() {
     this.$addTriangleTo(document.getElementById('background'))
@@ -12,10 +13,17 @@ export default {
 }
 </script>
 <style>
-.container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+/* Fade In Animation */
+body {
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
