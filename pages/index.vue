@@ -6,7 +6,7 @@
         <h1>
           NeoVimC Generator
         </h1>
-        <p class="discription">step1 : checked</p>
+        <p class="discription">step1 : check</p>
         <p class="discription">step2 : download</p>
         <p class="discription">step3 : open neovim</p>
       </div>
