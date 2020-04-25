@@ -87,6 +87,20 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <C-n> :tabnew<CR>:NERDTreeToggle<CR>
 
+" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+" Git
+noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+
 " Error
 nnoremap <silent><C-o> :copen<CR>
 nnoremap <silent><C-c> :cclose<CR>
@@ -99,8 +113,5 @@ nnoremap <Space> <C-w>s<C-w>j:term<CR>i
 tnoremap <C-n> <C-\\><C-n>
 tnoremap <Esc> <C-\\><C-n>:q<CR>
 nnoremap <Esc> a<Esc>
-
-" nnoremap F :call CocAction('format')<CR>
-nnoremap F :CocCommand prettier.formatFile<CR>
 `
 })
