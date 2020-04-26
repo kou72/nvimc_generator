@@ -1,22 +1,46 @@
-# nvimc_generator
+# NeoVimC Generator
 
-> My glorious Nuxt.js project
+NeoVimのconfigmファイルを簡単に作成するサービスです。  
+https://nvimc-generator.web.app/
 
-## Build Setup
+## plugin
 
-```bash
-# install dependencies
-$ npm install
+### ディレクトリツリー
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+[preservim/nerdtree](https://github.com/preservim/nerdtree)  
+ディレクトリツリーを表示します。
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+### コメントアウト
 
-# generate static project
-$ npm run generate
-```
+[tpope/vim-commentary](https://github.com/tpope/vim-commentary)  
+コメントアウトを簡単に行えるようになります。  
+よく使うコマンドは以下。  
+- `gcc` : 現在の行をコメントアウトします
+- `gc` : 選択してる複数の行をまとめてコメントアウトします
+  
+[sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)  
+こちらのプラグインを入れることで複数の言語に対応できるようにしています。
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### GIT
+
+[tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)  
+vimからgitを操作するプラグインです。  
+
+[airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)  
+gitの差分ステータスを左端に表示します。
+
+### カラースキーム
+
+[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)  
+カラースキームはVScodeっぽくするためにonedarkを導入しています。
+
+### ステータスバー 
+
+[vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)  
+ステータスバーをリッチにします。
+
+[vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)  
+ステータスバーのテーマはtomorrowを選択しています。
+
+### neoclide/coc.nvim
+
