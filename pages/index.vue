@@ -120,20 +120,25 @@
     </section>
     <section class="area">
       <v-row>
-        <v-col cols="3" class="download">
+        <v-col cols="3" class="download-area">
           <!-- ダウンロードボタン -->
-          <v-btn dark outlined depressed fab @click="downloadConfig">
+          <v-btn class="download" dark outlined depressed fab @click="downloadConfig">
             <v-icon size="4vw">mdi-download</v-icon>
           </v-btn>
           <p class="discription">download</p>
         </v-col>
         <!-- ファイルコピー -->
-        <v-col cols="6" class="download">
+        <v-col cols="6" class="download-area">
           <prism class="shell">> mv ~/Downloads/init.vim.txt ~/.config/nvim/init.vim</prism>
           <p class="discription">move file</p>
+          <!-- githubリンク -->
+          <v-btn class="github" outlined :href="documentURL" target="_blank">
+            document
+            <v-icon right>mdi-github</v-icon>
+          </v-btn>
         </v-col>
         <!-- ファイルを開く -->
-        <v-col cols="3" class="download">
+        <v-col cols="3" class="download-area">
           <prism class="shell">> nvim</prism>
           <p class="discription">open file</p>
         </v-col>
@@ -153,7 +158,8 @@ export default {
   data: () => ({
     selection: [],
     config: null,
-    map: null
+    map: null,
+    documentURL: 'https://github.com/kou72/nvimc_generator'
   }),
   computed: {
     ...mapState('checklist', ['items', 'init', 'mapInit'])
@@ -209,22 +215,26 @@ h1 {
   padding-bottom: 0;
   font-size: x-small;
 }
-.download {
+.download-area {
   text-align: center;
 }
 /* テキストを上から52%の位置で揃える */
-.download .v-btn {
+.download-area .download {
   background-color: #00000080;
   width: 20vh;
   height: 20vh;
   margin-top: 30vh;
   margin-bottom: 2vh;
 }
-.download .shell {
+.download-area .shell {
   height: 8vh;
   margin-top: 36vh;
   margin-bottom: 8vh;
 }
+.download-area .github {
+  margin-top: 25vh;
+}
+
 .v-label {
   font-size: small;
 }

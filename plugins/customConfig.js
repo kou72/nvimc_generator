@@ -14,7 +14,7 @@ if !filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd FileType * :PlugInstall
 endif\n`
 
-  // 機能拡張
+  // plugin
   if (seg.includes('plug'))
     baseText += `\n"***********************
 " Plug Install Packages
@@ -25,13 +25,14 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('comment')) baseText += "Plug 'tpope/vim-commentary'\n"
   if (id.includes('git')) baseText += "Plug 'tpope/vim-fugitive'\n"
   if (id.includes('git')) baseText += "Plug 'airblade/vim-gitgutter'\n"
+  if (id.includes('colorscheme')) baseText += "Plug 'joshdick/onedark.vim'\n"
   if (id.includes('indentLin')) baseText += "Plug 'Yggdroot/indentLine'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline'\n"
   if (id.includes('airline')) baseText += "Plug 'vim-airline/vim-airline-themes'\n"
   if (seg.includes('serv')) baseText += "Plug 'neoclide/coc.nvim', {'branch': 'release'}\n"
   if (seg.includes('plug')) baseText += 'call plug#end()\n'
 
-  // 基本設定
+  // base
   if (seg.includes('base'))
     baseText += `\n"**************
 " Base Setting
@@ -43,7 +44,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('expandtab')) baseText += 'set expandtab\n'
   if (id.includes('ignorecase')) baseText += 'set ignorecase\n'
 
-  // 外観装飾
+  // vsual
   if (seg.includes('visual'))
     baseText += `\n"*****************
 " Visual Settings
@@ -53,6 +54,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))\n`
   if (id.includes('number')) baseText += 'set number\n'
   if (id.includes('cursorline')) baseText += 'set cursorline\n'
   if (id.includes('termguicolors')) baseText += 'set termguicolors\n'
+  if (id.includes('colorscheme'))
+    baseText += `\n" Color Schemes
+colorscheme onedark\n`
   if (id.includes('indentLin'))
     baseText += `\n" IndentLin
 let g:airline_theme = 'tomorrow'
