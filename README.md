@@ -12,7 +12,7 @@ https://nvimc-generator.web.app/
     - `gcc` : 現在の行をコメントアウトします
     - `gc` : 選択してる複数の行をまとめてコメントアウトします
 - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)  
-  - commentaryの機能が言語に対応できるようにしています。
+  - commentaryの機能が複数の言語に対応できるようにしています。
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)  
    - vimからgitを操作できるようにします。  
 - [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)  
