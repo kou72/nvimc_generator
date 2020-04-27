@@ -74,7 +74,7 @@
             </OpenCard>
           </OpenCard>
           <!-- service  -->
-          <OpenCard title="Serport Service" :open="true">
+          <OpenCard title="Support Service" :open="true">
             <p class="caption ma-0">*node.jsが必須です!</p>
             <v-row>
               <v-col>
