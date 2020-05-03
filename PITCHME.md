@@ -5,16 +5,18 @@ suzukiKou
 ---
 ### 自己紹介  
 　  
-**名前** ： suzukiKou
+**名前** ： suzukiKou  
 
-**勉強中** : Vue.js,Nuxt.js,Firebase
+**趣味** : 漫画,アニメ,ボルダリング,登山  
 
-**趣味** : 漫画,アニメ,ボルダリング,登山
-
-<img src="gitpitch_img/eizoukenn.jpg" width="160px">
+<img src="gitpitch_img/eizoukenn.jpg" width="240px">
 
 ---
 ### キッカケ
+
+何かオリジナルのサービスを開発してみたいなーと考えながらConnpassを眺めていると、面白そうなもくもく会を発見  
+→ **5週間でwebサービスリリース人集まれ**
+
 ---
 必要なのは、GitHubアカウントのみ。
 ---
