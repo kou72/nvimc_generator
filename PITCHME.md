@@ -5,14 +5,15 @@ suzukiKou
 ---
 ### 自己紹介  
 　  
-**名前**：suzukiKou
+**名前** ： suzukiKou
 
-**勉強中**:Vue.js,Nuxt.js,Firebase
+**勉強中** : Vue.js,Nuxt.js,Firebase
 
-**趣味**:漫画,アニメ,ボルダリング,登山
+**趣味** : 漫画,アニメ,ボルダリング,登山
+
+---
 
 <img src="gitpitch_img/eizoukenn.png" width="320px">
-
 
 ---
 ### キッカケ
