@@ -11,8 +11,6 @@ suzukiKou
 
 **趣味** : 漫画,アニメ,ボルダリング,登山
 
----
-
 <img src="gitpitch_img/eizoukenn.jpg" width="320px">
 
 ---
