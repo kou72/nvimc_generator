@@ -13,7 +13,7 @@ suzukiKou
 
 ---
 
-<img src="gitpitch_img/eizoukenn.png" width="320px">
+<img src="gitpitch_img/eizoukenn.jpg" width="320px">
 
 ---
 ### キッカケ
